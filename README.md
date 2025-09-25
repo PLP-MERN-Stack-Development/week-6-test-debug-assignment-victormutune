@@ -5,12 +5,13 @@ This assignment focuses on implementing comprehensive testing strategies for a M
 
 ## Assignment Overview
 
-You will:
-1. Set up testing environments for both client and server
-2. Write unit tests for React components and server functions
-3. Implement integration tests for API endpoints
-4. Create end-to-end tests for critical user flows
-5. Apply debugging techniques for common MERN stack issues
+This project implements comprehensive testing and debugging for a MERN stack application. The following strategies and tools were used:
+
+1. **Testing environments** are set up for both client (React) and server (Express/MongoDB) using Jest, React Testing Library, Supertest, and Cypress.
+2. **Unit tests** cover React components (Button, Input, Form, PostList, ErrorBoundary) and server logic (Mongoose models, middleware).
+3. **Integration tests** verify API endpoints and component interactions.
+4. **End-to-end tests** are provided in the `client/cypress` folder for user flows.
+5. **Debugging techniques** include error boundaries in React, a global Express error handler, and logging.
 
 ## Project Structure
 
@@ -39,11 +40,14 @@ mern-testing/
 
 ## Getting Started
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week6-Assignment.md` file
-4. Explore the starter code and existing tests
-5. Complete the tasks outlined in the assignment
+1. Clone the repository
+2. Install dependencies for both client and server:
+  - `cd client && npm install`
+  - `cd ../server && npm install`
+3. Start MongoDB locally or use Atlas
+4. Run the server: `node src/index.js` (or use nodemon)
+5. Run the client (if using Create React App): `npm start`
+6. Run tests as described below
 
 ## Files Included
 
@@ -69,15 +73,34 @@ mern-testing/
 - Cypress/Playwright: End-to-end testing framework
 - MongoDB Memory Server: In-memory MongoDB for testing
 
-## Submission
+## Testing Strategy
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+### Client
+- **Unit tests**: Located in `client/src/tests/unit/`, covering all main React components.
+- **Integration tests**: In `client/src/tests/integration/`, simulating user flows across components.
+- **End-to-end tests**: Cypress tests in `client/cypress/` (e.g., `sample.cy.js`).
+- **Run tests**: `npm test` or `npm run test:unit` from the `client` directory.
 
-1. Complete all required tests (unit, integration, and end-to-end)
-2. Achieve at least 70% code coverage for unit tests
-3. Document your testing strategy in the README.md
-4. Include screenshots of your test coverage reports
-5. Demonstrate debugging techniques in your code
+### Server
+- **Unit tests**: In `server/tests/unit/`, covering models and middleware.
+- **Integration tests**: In `server/tests/integration/`, covering API endpoints with Supertest and MongoDB Memory Server.
+- **Run tests**: `npm test` or `npm run test:unit` from the `server` directory.
+
+### Coverage
+- Jest is configured to collect coverage. Run `npm test -- --coverage` in client or server to generate reports.
+- Aim: At least 70% code coverage for unit tests.
+
+### Debugging Techniques
+- **Client**: Error boundaries (`ErrorBoundary.jsx`), use of React DevTools.
+- **Server**: Global error handler middleware, logging errors to the console, use of Node.js debugger.
+
+### Test Coverage Reports
+- After running tests with coverage, view the generated HTML report in the `coverage` folder.
+- (Add screenshots here after running tests)
+
+---
+
+For more details, see the assignment instructions in `Week6-Assignment.md`.
 
 ## Resources
 
