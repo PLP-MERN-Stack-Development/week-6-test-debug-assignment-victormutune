@@ -1,0 +1,14 @@
+{
+  "name": "mern-client",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "test": "jest",
+    "test:unit": "jest --testPathPattern=unit",
+    "test:integration": "jest --testPathPattern=integration"
+  },
+  "devDependencies": {
+    "jest": "^29.0.0",
+    "@testing-library/react": "^14.0.0"
+  }
+}
